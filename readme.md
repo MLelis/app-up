@@ -29,7 +29,12 @@ DB_USERNAME=root
 DB_PASSWORD=
 ```
 
-* Em seguida, abra o terminal do visual studio code e rode o comando abaixo para criar as tabelas no banco.
+* Em seguida, abra o terminal do visual studio code e rode o comando abaixo.
+```
+composer install
+```
+
+* Em seguida, rode o comando abaixo para criar as tabelas no banco.
 ```
 php artisan migrate
 ```
