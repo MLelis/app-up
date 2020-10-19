@@ -19,7 +19,7 @@
 <div class="ajax_load">
     <div class="ajax_load_box">
         <div class="ajax_load_box_circle"></div>
-        <div class="ajax_load_box_title">Wait, loading!</div>
+        <div class="ajax_load_box_title">Aguarde, carregando!</div>
     </div>
 </div>
 
@@ -47,8 +47,7 @@
                 <ul class="nav navbar-nav">
                     @if (!Auth::guest())
                         <li><a href="/home">Home</a></li>
-                        <li><a href="/articles">Articles</a></li>
-                        <li><a href="/articles/create">New Article</a></li>
+                        <li><a href="/articles">Artigos</a></li>
                     @endif
                 </ul>
 
@@ -56,8 +55,7 @@
                 <ul class="nav navbar-nav navbar-right">
                     <!-- Authentication Links -->
                     @if (Auth::guest())
-                        <li><a href="{{ route('login') }}">Login</a></li>
-                        <li><a href="{{ route('register') }}">Register</a></li>
+                        <li><a href="{{ route('login') }}">Logar</a></li>
                     @else
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"

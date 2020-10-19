@@ -39,4 +39,3 @@ function load(action) {
         load_div.fadeOut();
     }
 }
-

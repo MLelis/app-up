@@ -29,10 +29,10 @@ class ArticleController extends Controller
         //=========SAVE ALL RECORDS=========//
         //==================================//
         if (count($dataSite->allItemsFound()) == 0)
-            return ["msg" => 'No results found.', "success" => false];
+            return ["msg" => 'Nenhum resultado encontrado.', "success" => false];
         if ($this->storeDataSite($dataSite->allItemsFound()))
-            return ["msg" => 'All items successfully captured and recorded!', "success" => true];
-        return ["msg" => 'Problem registering!', "success" => false];
+            return ["msg" => 'Todos os dados capturados foram cadastrados com sucesso!', "success" => true];
+        return ["msg" => 'Erro ao registrar!', "success" => false];
     }
 
     public function storeDataSite($data)
@@ -52,16 +52,6 @@ class ArticleController extends Controller
     {
         $articles = $this->article->paginate($this->totalPage);
         return view('articles', compact('articles'));
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        $title = 'New Articles';
-        return view('new-articles', compact('title'));
     }
 
     /**
