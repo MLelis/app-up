@@ -1,43 +1,45 @@
-## Desafio Uplexis
-Aplicação que realiza busca via CURL com PHP ao site Quest MultiMarcas e capturar os dados dos veículos retornados na busca.
+## Objetivo
+Prova realizada com o objetivo de passar na entrevista de trabalho da empresa Uplexis.
 
-#### Dependências
-* PHP 7.3.11
-* Apache Server 2.4 +
-* Ver 15.1 Distrib 10.1.37-MariaDB, for Win32 (AMD64)
+#### Dependências Necessárias
+* PHP 7.2.19 ou +
+* Apache Server 2.4.35 ou +
+* MySQL 5.7.24 ou +
 * Laravel Framework 5.4.36
+* Laragon
 
-#### Instalação
-A instalação do sistema pode ser feita seguindo os seguintes passos:
-> ATENÇAO: Os passos para instalação descritos nesta documentação, assumem que a aplicação rodará em uma estação Windows e que contenha todas as dependências instaladas e configuradas.
+#### Instalação do sistema
+Para conseguir rodar o sistema localmente, é preciso seguir os seguintes passos:
+> OBS: Para rodar o sistema, utilizei o Laragon Full versão 4.0.16.
 
-* Clonar ou baixar o projeto diretamente no `localhost` da estação.
-```bash
-C:\xampp\htdocs
-```
-* Depois que baixar o respositório, instalar as dependências.
-```bash
-C:\xampp\htdocs\app\ composer install
-```
+* Clone o repositório dentro da pasta  `C:\laragon\www`.
 
-* Criar uma base de dados. Configurar o arquivo `.env` que está na raiz do aplicação, conforme suas credenciais.
+* Depois abra o projeto no Visual Studio Code.
+
+* Entre no Laragon -> Banco de Dados -> Abrir: e crie um banco de dados com o nome  `prova` em seguida, entre no projeto e crie um arquivo chamado `.env` em seguida, copie tudo do arquivo `._env` para o arquivo criado.
+
+* Em seguida, altere os dados de conexão com o banco de dados no arquivo `.env`, informando o host, usuario, senha e nome do banco. Segue exemplo do meu:
+
 ```bash
 DB_CONNECTION=mysql
 DB_HOST=127.0.0.1
 DB_PORT=3306
-DB_DATABASE=db_uplexis
+DB_DATABASE=prova
 DB_USERNAME=root
-DB_PASSWORD=root
+DB_PASSWORD=
 ```
-* Executar o comando a baixo
+
+* Em seguida, abra o terminal do visual studio code e rode o comando abaixo para criar as tabelas no banco.
 ```
-C:\xampp\htdocs\app\ php artisan migrate
+php artisan migrate
 ```
-* Para executar a aplicação, execute o comando:
-```bash
-C:\xampp\htdocs\app\ php artisan serve
+* Em seguida, rode o comando abaixo para criar o usuario admin/admin.
 ```
-### Creditos
-Esta aplicação foi desenvolvida por [Caio Dellano Nunes da Silva](mailto:bladellano@gmail.com).
-<br>
-Site: www.dellanosites.com.br
+php artisan db:seed
+```
+* Em seguida, rode o comando abaixo para gerar uma key para aplicação.
+```
+php artisan key:generate
+```
+
+* OBS: a seguindo todos os passos acima, basta acessar o sistema pela url: `http://app-up.test/`
