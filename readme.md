@@ -1,5 +1,5 @@
 ## Objetivo
-Prova realizada com o objetivo de passar na entrevista de trabalho da empresa Uplexis.
+Prova realizada para empresa UpLexis.
 
 #### Dependências Necessárias
 * PHP 7.2.19 ou +
